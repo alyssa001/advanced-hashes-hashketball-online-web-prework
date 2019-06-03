@@ -141,8 +141,8 @@ end
 def team_colors(team) 
   hash = game_hash
   game_hash.each do |teams_playing, data| 
-    data[:players].each do |player_name, player_data|
-      if  player_name == name
+    data[:players].each do |team_name, player_data|
+      if  team_name == team
         return hash[teams_playing][:players][name][:shoe]
       end 
     end 
