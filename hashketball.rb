@@ -224,7 +224,6 @@ end
 def team_score
   game_hash.map do |location, team_info|
     team_info.map do |name, stats|
-        binding.pry
       if stats.include?
 
     end
