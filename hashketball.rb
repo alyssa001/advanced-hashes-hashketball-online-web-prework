@@ -151,11 +151,19 @@ def team_names
 end
 
 def player_numbers(team_name)
-  game_hash.each do |home_away, keys|
-    if keys[:team_name] == team_name
-      return keys[:players].map { |player| player[:number] }
+  jersey_numbers = []
+  game_hash.each do |location, team|
+    if team[:team_name] == team_name
+      team.each do |attribute, data|
+        if attribute == :players
+          data.each do |player, stats|
+            jersey_numbers << stats[:number]
+          end
+        end
+      end
     end
   end
+  jersey_numbers
 end
 
 def player_stats(name)
