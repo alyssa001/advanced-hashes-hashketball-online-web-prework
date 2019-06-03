@@ -196,3 +196,12 @@ def big_shoe_rebounds
   num_rebounds
 end
 
+def most_points_scored(game)
+  home = game[:home][:players].max_by{|k,v| v[:points]}
+    puts home
+    puts "Mason Plumlee scored the most for Brooklyn Nets"
+
+  away = game[:away][:players].max_by{|k,v| v[:points]}
+    puts away
+    puts "Ben Gorden scored the most for Charlotte Hornets"
+end
