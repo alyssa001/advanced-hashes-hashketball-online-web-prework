@@ -158,14 +158,5 @@ def player_numbers(team_name)
   end
 end
 
-def player_stats(player)
-  game_hash.map do |location, team_info|
-  team_info[:players].map do |name, stats|
-    if name.include?(player)
-       return stats
-    end
-  end
-end
-end
 
 
