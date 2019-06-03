@@ -116,3 +116,8 @@ def game_hash
   }
 end
 
+def num_points
+  game_hash.each do |player, data|
+    data.each do |attribute, value|
+      return :points
+    return 
