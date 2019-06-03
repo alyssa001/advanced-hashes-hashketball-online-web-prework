@@ -138,13 +138,12 @@ def shoe_size(name)
   end 
 end
 
-def team_colors(team) 
-	game_hash.each do |teams_playing, data|
-		data.each do |attribute, value| 
-			if attribute == :colors
-				return game_hash[teams_playing][:colors]
-			end 
-		end 
-	end 
-end 
+def team_colors(team_name)
+  game_hash.each do |home_away, keys|
+    if keys[:team_name] == team_name
+      return keys[:colors].map(&:capitalize)
+    end
+  end
+end
+
 
