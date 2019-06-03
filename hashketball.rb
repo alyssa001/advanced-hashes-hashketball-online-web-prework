@@ -119,7 +119,7 @@ end
 
 #Refactor
 def num_points_scored(name)
-  result = nil
+  result = 
   game_hash.each do |base, team_data|
     team_data.each do |data,info|
       if data == :players 
